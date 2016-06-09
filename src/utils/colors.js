@@ -1,5 +1,5 @@
 /**
- * Created by SuhairZain on 4/6/16.
+ * Created by Suhair Zain on 4/6/16.
  */
 
 export const COLOR_TEXT = '#FFFFFF';

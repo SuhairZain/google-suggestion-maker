@@ -1,5 +1,5 @@
 /**
- * Created by SuhairZain on 12/5/16.
+ * Created by Suhair Zain on 12/5/16.
  */
 
 var webpack = require('webpack');
