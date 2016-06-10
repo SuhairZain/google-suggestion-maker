@@ -29,19 +29,20 @@ const styles = {
     }
 };
 
-const Suggestions = (props) => (
-    <div dir="ltr" style={styles.root}>
-        <div>
+const Suggestions = ({suggestions}) => (
+    <div>
+        {suggestions.length===0?null:
+        <div dir="ltr" style={styles.root}>
             <div style={styles.sbddB}>
                 <div style={styles.sbsbA}>
                     <ul role="listbox" style={styles.sbsbB}>
-                        {props.suggestions.map(function(suggestion){
+                        {suggestions.map(function(suggestion){
                             return <SuggestionItem key={suggestion}/>
                         })}
                     </ul>
                 </div>
             </div>
-        </div>
+        </div>}
     </div>
 );
 
