@@ -44,34 +44,16 @@ const styles = {
     }
 };
 
-class SearchField extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            baseText: 'how to '
-        };
-    }
-
-    onBaseTextChange = (evt) => {
-        this.setState({
-            ...this.state,
-            baseText: evt.target.value
-        });
-    };
-
-    render(){
-        return (
-            <div style={styles.sbibod}>
-                <div style={styles.sbibA}>
-                    <div style={styles.sbibB}>
-                        <div style={{position: 'relative'}}>
-                            <input onChange={this.onBaseTextChange} value={this.state.baseText} dir="ltr" style={addGoogleFontSpec(styles.fieldOne)} autocomplete="off" type="text"/>
-                        </div>
-                    </div>
+const SearchField = (props) => (
+    <div style={styles.sbibod}>
+        <div style={styles.sbibA}>
+            <div style={styles.sbibB}>
+                <div style={{position: 'relative'}}>
+                    <input value={props.searchText} readonly dir="ltr" style={addGoogleFontSpec(styles.fieldOne)} autocomplete="off" type="text"/>
                 </div>
             </div>
-        );
-    }
-}
+        </div>
+    </div>
+);
 
 export default SearchField;

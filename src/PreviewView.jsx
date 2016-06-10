@@ -40,7 +40,7 @@ const PreviewView = () => (
         <div style={styles.content}>
             <img src="images/google_logo.png"/>
             <div style={styles.fieldAndSuggestions}>
-                <SearchField/>
+                <SearchField searchText="how to "/>
                 <Suggestions suggestions={['be single', 'be awesome']}/>
             </div>
         </div>
