@@ -13,7 +13,7 @@ const styles = {
         verticalAlign: 'top',
         border: '1px solid #4d90fe',
         borderTopColor: 'none',
-        margin: '0 24px'
+        margin: '24px 24px 0 24px'
     },
     sbibA: {
         background: '#fff',
@@ -44,12 +44,12 @@ const styles = {
     }
 };
 
-const SearchField = (props) => (
+const SearchField = ({searchText}) => (
     <div style={styles.sbibod}>
         <div style={styles.sbibA}>
             <div style={styles.sbibB}>
                 <div style={{position: 'relative'}}>
-                    <input value={props.searchText} readOnly="readonly" dir="ltr" style={addGoogleFontSpec(styles.fieldOne)} autocomplete="off" type="text"/>
+                    <input value={searchText} readOnly="readonly" dir="ltr" style={addGoogleFontSpec(styles.fieldOne)} autocomplete="off" type="text"/>
                 </div>
             </div>
         </div>
