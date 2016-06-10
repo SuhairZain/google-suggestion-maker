@@ -40,35 +40,37 @@ const styles = {
         Outline: 'medium none',
         font: '16px arial,sans-serif',
         lineHeight: '26px !important'
-    },
-    fieldTwo: {
-        border: 'medium none',
-        padding: '0px',
-        margin: '0px',
-        height: 'auto',
-        width: '100%',
-        position: 'absolute',
-        zIndex: '1',
-        backgroundColor: 'transparent',
-        color: 'silver',
-        left: '0px',
-        visibility: 'hidden',
-        font: '16px arial,sans-serif',
-        lineHeight: '26px !important'
     }
 };
 
-const SearchField = () => (
-    <div style={styles.sbibod} id="sfdiv">
-        <div style={styles.sbibA}>
-            <div style={styles.sbibB}>
-                <div style={{position: 'relative'}} id="gs_lc0">
-                    <input spellcheck="false" dir="ltr" style={styles.fieldOne} aria-autocomplete="both" role="combobox" aria-haspopup="false" class="gsfi" id="lst-ib" maxlength="2048" name="q" autocomplete="off" title="Search" value="" aria-label="Search" type="text"/>
-                    {/*<input dir="ltr" id="gs_taif0" style={styles.fieldTwo} aria-hidden="true" autocomplete="off" disabled="" class="gsfi"/>*/}
+class SearchField extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            baseText: 'how to '
+        };
+    }
+
+    onBaseTextChange = (evt) => {
+        this.setState({
+            ...this.state,
+            baseText: evt.target.value
+        })
+    };
+
+    render(){
+        return (
+            <div style={styles.sbibod} id="sfdiv">
+                <div style={styles.sbibA}>
+                    <div style={styles.sbibB}>
+                        <div style={{position: 'relative'}} id="gs_lc0">
+                            <input onChange={this.onBaseTextChange} value={this.state.baseText} dir="ltr" style={styles.fieldOne} autocomplete="off" type="text"/>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-);
+        );
+    }
+}
 
 export default SearchField;

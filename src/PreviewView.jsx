@@ -1,5 +1,5 @@
 /**
- * Created by SuhairZain on 10/6/16.
+ * Created by Suhair Zain on 10/6/16.
  */
 
 import React, {Component} from 'react';
@@ -19,18 +19,6 @@ const styles = {
         flexDirection: 'column',
         height: '100%',
         justifyContent: 'center'
-    },
-    searchField: {
-        border: 'medium none',
-        padding: 0,
-        margin: 0,
-        height: 'auto',
-        width: '100%',
-        background: 'transparent url(\'data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw%3D%3D\') repeat scroll 0 0',
-        position: 'absolute',
-        zIndex: 6,
-        left: 0,
-        Outline: 'medium none'
     }
 };
 
