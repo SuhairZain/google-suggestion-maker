@@ -49,7 +49,7 @@ const SearchField = (props) => (
         <div style={styles.sbibA}>
             <div style={styles.sbibB}>
                 <div style={{position: 'relative'}}>
-                    <input value={props.searchText} readonly dir="ltr" style={addGoogleFontSpec(styles.fieldOne)} autocomplete="off" type="text"/>
+                    <input value={props.searchText} readOnly="readonly" dir="ltr" style={addGoogleFontSpec(styles.fieldOne)} autocomplete="off" type="text"/>
                 </div>
             </div>
         </div>
