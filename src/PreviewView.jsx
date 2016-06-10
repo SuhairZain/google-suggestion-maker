@@ -27,13 +27,6 @@ const styles = {
     }
 };
 
-const addPadding = function(styles){
-    return {
-        ...styles,
-        padding: 24
-    }
-};
-
 const PreviewView = () => (
     <div id="preview" style={styles.root}>
         <div style={styles.content}>
