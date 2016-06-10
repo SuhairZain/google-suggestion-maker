@@ -11,7 +11,6 @@ const styles = {
     root: {
         backgroundColor: '#FFFFFF',
         height: '100%',
-        color: '#F00',
         width: '50%'
     },
     content: {
@@ -41,7 +40,7 @@ const PreviewView = () => (
             <img src="images/google_logo.png"/>
             <div style={styles.fieldAndSuggestions}>
                 <SearchField searchText="how to "/>
-                <Suggestions suggestions={['be single', 'be awesome']}/>
+                <Suggestions baseText="how to " suggestions={['be single', 'be awesome', 'be ingle', 'be awome']}/>
             </div>
         </div>
     </div>

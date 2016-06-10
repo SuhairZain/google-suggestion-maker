@@ -29,7 +29,7 @@ const styles = {
     }
 };
 
-const Suggestions = ({suggestions}) => (
+const Suggestions = ({baseText, suggestions}) => (
     <div>
         {suggestions.length===0?null:
         <div dir="ltr" style={styles.root}>
@@ -37,7 +37,7 @@ const Suggestions = ({suggestions}) => (
                 <div style={styles.sbsbA}>
                     <ul role="listbox" style={styles.sbsbB}>
                         {suggestions.map(function(suggestion){
-                            return <SuggestionItem key={suggestion}/>
+                            return <SuggestionItem base={baseText} suggestion={suggestion} key={suggestion}/>
                         })}
                     </ul>
                 </div>

@@ -8,21 +8,21 @@ import {addGoogleFontSpec} from './utils/google-specific';
 
 const styles = {
     sbsbC: {
-        lineHeight: '22px',
         overflow: 'hidden',
         padding: '0 10px',
         textAlign: 'left'
     },
     sbqsc: {
+        color: '#222',
         wordWrap: 'break-word'
     }
 };
 
-const SuggestionItem = () => (
+const SuggestionItem = ({base, suggestion}) => (
     <li style={addGoogleFontSpec(styles.sbsbC)} dir="ltr" role="presentation">
         <div id="sbse2" role="option">
-            <div style={styles.sbqsc}>how to
-                <b>be single</b>
+            <div style={styles.sbqsc}>{base}
+                <b>{suggestion}</b>
             </div>
         </div>
     </li>
