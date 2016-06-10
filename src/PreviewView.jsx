@@ -5,6 +5,7 @@
 import React, {Component} from 'react';
 
 import SearchField from './SearchField.jsx';
+import Suggestions from './Suggestions.jsx';
 
 const styles = {
     root: {
@@ -19,6 +20,11 @@ const styles = {
         flexDirection: 'column',
         height: '100%',
         justifyContent: 'center'
+    },
+    fieldAndSuggestions: {
+        display: 'flex',
+        flexDirection: 'column',
+        width: '100%'
     }
 };
 
@@ -33,8 +39,9 @@ const PreviewView = () => (
     <div id="preview" style={styles.root}>
         <div style={styles.content}>
             <img src="images/google_logo.png"/>
-            <div style={{width: '100%'}}>
+            <div style={styles.fieldAndSuggestions}>
                 <SearchField/>
+                <Suggestions suggestions={['be single', 'be awesome']}/>
             </div>
         </div>
     </div>
