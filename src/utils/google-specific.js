@@ -5,6 +5,6 @@
 export const addGoogleFontSpec = function(style){
     return {
         ...style,
-        font: '16px arial,sans-serif'
+        font: '16px/22px arial,sans-serif'
     };
 };
