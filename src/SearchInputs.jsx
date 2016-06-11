@@ -64,7 +64,9 @@ class SearchInputs extends React.Component {
                             disabled={this.props.suggestions.length>=4}/>
                         <Button
                             text="Create image"
-                            margin="0 0 0 10px"/>
+                            margin="0 0 0 10px"
+                            onClick={this.props.onCreateImage}
+                            disabled={this.props.search==='' || this.props.suggestions.length===0}/>
                     </div>
                 </div>
             </div>
