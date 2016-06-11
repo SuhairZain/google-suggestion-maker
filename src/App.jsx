@@ -17,6 +17,7 @@ class App extends React.Component {
         super(props);
         this.state = {
             search: 'how to ',
+            includeSearch: true,
             suggestions: ['be single', 'be awesome', 'be single and awesome', 'be simply awesome']
         };
     }
@@ -46,6 +47,13 @@ class App extends React.Component {
         this.setState({
             ...this.state,
             search: searchText
+        });
+    };
+
+    handleIncludeSearchChange = () => {
+        this.setState({
+            ...this.state,
+            includeSearch: !this.state.includeSearch
         });
     };
 
@@ -96,14 +104,17 @@ class App extends React.Component {
                 <div style={this.styles.inputAndPreview}>
                     <SearchInputs
                         search={this.state.search}
+                        includeSearch={this.state.includeSearch}
                         suggestions={this.state.suggestions}
                         onSearchChange={this.handleSearchChange}
+                        onIncludeSearchChange={this.handleIncludeSearchChange}
                         onSuggestionsChange={this.handleSuggestionsChange}
                         onSuggestionDelete={this.handleSuggestionDelete}
                         onAdd={this.handleAddSuggestion}
                         onCreateImage={this.handleCreateImage}/>
                     <PreviewView
                         search={this.state.search}
+                        includeSearch={this.state.includeSearch}
                         suggestions={this.state.suggestions}/>
                 </div>
             </div>

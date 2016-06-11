@@ -27,13 +27,13 @@ const styles = {
     }
 };
 
-const PreviewView = ({search, suggestions}) => (
+const PreviewView = ({search, includeSearch, suggestions}) => (
     <div id="preview" style={styles.root}>
         <div style={styles.content}>
             <img src="images/google_logo.png"/>
             <div style={styles.fieldAndSuggestions}>
                 <InputField text={search} readOnly={true} margins="24px 24px 0 24px"/>
-                <Suggestions baseText={search} suggestions={suggestions}/>
+                <Suggestions baseText={includeSearch?search:''} suggestions={suggestions}/>
             </div>
         </div>
     </div>

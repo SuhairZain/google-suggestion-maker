@@ -5,6 +5,7 @@
 import React, {Component} from 'react';
 
 import Button from './Button.jsx';
+import CheckBoxWithLabel from './CheckBoxWithLabel.jsx';
 import SearchInputItem from './SearchInputItem.jsx';
 import SuggestionInputItem from './SuggestionInputItem.jsx';
 
@@ -54,8 +55,12 @@ class SearchInputs extends React.Component {
                     <SearchInputItem
                         text={this.props.search}
                         label="Enter the search here"
-                        margins="0 24px 24px 24px"
+                        margins="0 24px 0 24px"
                         onChange={this.handleSearchChange}/>
+                    <CheckBoxWithLabel
+                        checked={this.props.includeSearch}
+                        onChange={this.props.onIncludeSearchChange}
+                        label="Include search term in suggestions"/>
                     {this.props.suggestions.map(function(suggestion){
                         return (
                         <SuggestionInputItem
