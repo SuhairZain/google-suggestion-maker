@@ -26,8 +26,16 @@ const styles = {
     }
 };
 
-const Button = ({text, margin, onClick}) => (
-    <div style={{...styles.root, margin: margin}} onClick={onClick}>
+const getStyle = function(styles, disabled){
+    return disabled?{
+        ...styles,
+        backgroundColor: '#B6B6B6',
+        cursor: 'normal'
+    }:styles;
+};
+
+const Button = ({text, disabled, margin, onClick}) => (
+    <div style={{...getStyle(styles.root, disabled), margin: margin}} onClick={disabled?null:onClick}>
         <span>{text}</span>
     </div>
 );

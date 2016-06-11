@@ -58,10 +58,10 @@ class SearchInputs extends React.Component {
                     })}
                     <div style={this.styles.buttons}>
                         <Button
-                            text="Add suggestion"
+                            text={this.props.suggestions.length<4?"Add suggestion":"Max 4 suggestions"}
                             margin="0 10px 0 0"
                             onClick={this.props.onAdd}
-                            disabled={this.props.suggestions.length>4}/>
+                            disabled={this.props.suggestions.length>=4}/>
                         <Button
                             text="Create image"
                             margin="0 0 0 10px"/>
