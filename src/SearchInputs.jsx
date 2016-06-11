@@ -8,14 +8,6 @@ import SearchInputItem from './SearchInputItem.jsx';
 import SuggestionInputItem from './SuggestionInputItem.jsx';
 
 class SearchInputs extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            searchText: 'how to ',
-            suggestions: ['be single', 'be awesome']
-        };
-    }
-
     styles = {
         root: {
             display: 'flex',
@@ -29,19 +21,11 @@ class SearchInputs extends React.Component {
     };
 
     handleSearchChange = (evt) => {
-        this.setState({
-            ...this.state,
-            searchText: evt.target.value
-        });
+        this.props.onSearchChange(evt.target.value);
     };
 
-    handleSuggestionChange = (suggestion, index) => {
-        const suggestions = this.state.suggestions;
-        suggestions[index] = suggestion;
-        this.setState({
-            ...this.state,
-            suggestions: suggestions
-        });
+    handleSuggestionsChange = (suggestion, index) => {
+        this.props.onSuggestionsChange(suggestion, index);
     };
 
     render() {
@@ -52,17 +36,17 @@ class SearchInputs extends React.Component {
             <div style={this.styles.root}>
                 <div style={this.styles.fields}>
                     <SearchInputItem
-                        text={this.state.searchText}
+                        text={this.props.search}
                         label="Enter the search here"
                         onChange={this.handleSearchChange}/>
-                    {this.state.suggestions.map(function(suggestion){
+                    {this.props.suggestions.map(function(suggestion){
                         return (
                         <SuggestionInputItem
                             suggestion={suggestion}
                             label="Enter a suggestion here"
                             index={i++}
                             key={i}
-                            onChange={self.handleSuggestionChange}/>
+                            onChange={self.handleSuggestionsChange}/>
                         )
                     })}
                 </div>

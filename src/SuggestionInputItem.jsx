@@ -6,8 +6,6 @@ import React, {Component} from 'react';
 
 import SearchInputItem from './SearchInputItem.jsx';
 
-const styles = {};
-
 class SuggestionInputItem extends React.Component {
     handleChange = (evt) => {
         this.props.onChange(evt.target.value, this.props.index);

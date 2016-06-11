@@ -13,6 +13,14 @@ import PreviewView from './PreviewView.jsx';
 import SearchInputs from './SearchInputs.jsx';
 
 class App extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            search: 'how to ',
+            suggestions: ['be single', 'be awesome']
+        };
+    }
+
     styles = {
         root: {
             alignItems: 'center',
@@ -47,13 +55,35 @@ class App extends React.Component {
         });
     }*/
 
+    handleSearchChange = (searchText) => {
+        this.setState({
+            ...this.state,
+            search: searchText
+        });
+    };
+
+    handleSuggestionsChange = (suggestion, index) => {
+        const suggestions = this.state.suggestions;
+        suggestions[index] = suggestion;
+        this.setState({
+            ...this.state,
+            suggestions: suggestions
+        });
+    };
+
     render() {
         return (
             <div style={this.styles.root}>
                 <span style={this.styles.title}>Create funny google search suggestions</span>
                 <div style={this.styles.inputAndPreview}>
-                    <SearchInputs/>
-                    <PreviewView/>
+                    <SearchInputs
+                        search={this.state.search}
+                        suggestions={this.state.suggestions}
+                        onSearchChange={this.handleSearchChange}
+                        onSuggestionsChange={this.handleSuggestionsChange}/>
+                    <PreviewView
+                        search={this.state.search}
+                        suggestions={this.state.suggestions}/>
                 </div>
             </div>
         );
