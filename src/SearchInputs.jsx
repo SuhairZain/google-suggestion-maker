@@ -4,6 +4,7 @@
 
 import React, {Component} from 'react';
 
+import Button from './Button.jsx';
 import SearchInputItem from './SearchInputItem.jsx';
 import SuggestionInputItem from './SuggestionInputItem.jsx';
 
@@ -17,6 +18,10 @@ class SearchInputs extends React.Component {
             display: 'flex',
             flexDirection: 'column',
             width: '100%'
+        },
+        buttons: {
+            display: 'flex',
+            margin: '0 24px'
         }
     };
 
@@ -49,6 +54,10 @@ class SearchInputs extends React.Component {
                             onChange={self.handleSuggestionsChange}/>
                         )
                     })}
+                    <div style={this.styles.buttons}>
+                        <Button text="Add suggestion" margin="0 10px 0 0"/>
+                        <Button text="Create image" margin="0 0 0 10px"/>
+                    </div>
                 </div>
             </div>
         );
