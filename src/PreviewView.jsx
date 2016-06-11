@@ -4,14 +4,18 @@
 
 import React, {Component} from 'react';
 
+import {
+    COLOR_PRIMARY
+} from './utils/colors';
+
 import InputField from './InputField.jsx';
 import Suggestions from './Suggestions.jsx';
 
 const styles = {
     root: {
-        alignItems: 'center',
         backgroundColor: '#FFFFFF',
         display: 'flex',
+        flexDirection: 'column',
         width: '50%'
     },
 
@@ -25,11 +29,20 @@ const styles = {
         display: 'flex',
         flexDirection: 'column',
         width: '100%'
+    },
+    credits: {
+        color: COLOR_PRIMARY,
+        display: 'none',
+        fontFamily: 'Arial',
+        fontSize: '12px',
+        margin: '0 12px 12px 0',
+        textAlign: 'right'
     }
 };
 
 const PreviewView = ({search, includeSearch, suggestions}) => (
     <div id="preview" style={styles.root}>
+        <div style={{flexGrow: 1}}></div>
         <div style={styles.content}>
             <img src="images/google_logo.png"/>
             <div style={styles.fieldAndSuggestions}>
@@ -37,6 +50,8 @@ const PreviewView = ({search, includeSearch, suggestions}) => (
                 <Suggestions baseText={includeSearch?search:''} suggestions={suggestions}/>
             </div>
         </div>
+        <div style={{flexGrow: 1}}></div>
+        <span id="app-url" style={styles.credits}>http://goo.gl/v9eyUp</span>
     </div>
 );
 

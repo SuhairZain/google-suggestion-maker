@@ -86,11 +86,14 @@ class App extends React.Component {
 
     handleCreateImage = () => {
         const previewDiv = document.getElementById('preview');
+        const urlElement = document.getElementById('app-url');
+        urlElement.style.display = 'initial';
 
         html2canvas(previewDiv, {
             height: previewDiv.height,
             width: previewDiv.width,
             onrendered: function(canvas){
+                urlElement.style.display = 'none';
                 Canvas2Image.saveAsJPEG(canvas, canvas.width, canvas.height);
             }
         });
