@@ -43,6 +43,7 @@ class SearchInputs extends React.Component {
                     <SearchInputItem
                         text={this.props.search}
                         label="Enter the search here"
+                        margins="0 24px 24px 24px"
                         onChange={this.handleSearchChange}/>
                     {this.props.suggestions.map(function(suggestion){
                         return (
@@ -51,7 +52,8 @@ class SearchInputs extends React.Component {
                             label="Enter a suggestion here"
                             index={i++}
                             key={i}
-                            onChange={self.handleSuggestionsChange}/>
+                            onChange={self.handleSuggestionsChange}
+                            onDelete={self.props.onSuggestionDelete}/>
                         )
                     })}
                     <div style={this.styles.buttons}>

@@ -17,10 +17,10 @@ const styles = {
     }
 };
 
-const SearchInputItem = ({text, label, onChange}) => (
+const SearchInputItem = ({text, label, margins, onChange}) => (
     <div style={styles.root}>
         <span style={styles.label}>{label}</span>
-        <InputField text={text} readOnly={false} onChange={onChange} margins="0 24px 24px 24px"/>
+        <InputField text={text} readOnly={false} onChange={onChange} margins={margins}/>
     </div>
 );
 
