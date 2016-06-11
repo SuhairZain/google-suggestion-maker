@@ -9,16 +9,17 @@ import Suggestions from './Suggestions.jsx';
 
 const styles = {
     root: {
+        alignItems: 'center',
         backgroundColor: '#FFFFFF',
-        height: '100%',
+        display: 'flex',
         width: '50%'
     },
+
     content: {
         alignItems: 'center',
         display: 'flex',
         flexDirection: 'column',
-        height: '100%',
-        justifyContent: 'center'
+        width: '100%'
     },
     fieldAndSuggestions: {
         display: 'flex',
