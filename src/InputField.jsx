@@ -12,8 +12,7 @@ const styles = {
         height: '38px',
         verticalAlign: 'top',
         border: '1px solid #4d90fe',
-        borderTopColor: 'none',
-        margin: '24px 24px 0 24px'
+        borderTopColor: 'none'
     },
     sbibA: {
         background: '#fff',
@@ -44,16 +43,23 @@ const styles = {
     }
 };
 
-const SearchField = ({searchText}) => (
-    <div style={styles.sbibod}>
+const addMargin = function (style, margins) {
+    return {
+        ...style,
+        margin: margins
+    }
+};
+
+const InputField = ({text, hint, readOnly, onChange, margins}) => (
+    <div style={addMargin(styles.sbibod, margins)}>
         <div style={styles.sbibA}>
             <div style={styles.sbibB}>
                 <div style={{position: 'relative'}}>
-                    <input value={searchText} readOnly="readonly" dir="ltr" style={addGoogleFontSpec(styles.fieldOne)} autocomplete="off" type="text"/>
+                    <input value={text} placeholder={hint} onChange={readOnly?null:onChange} readOnly={readOnly?"readonly":""} dir="ltr" style={addGoogleFontSpec(styles.fieldOne)} autocomplete="off" type="text"/>
                 </div>
             </div>
         </div>
     </div>
 );
 
-export default SearchField;
+export default InputField;
