@@ -11,12 +11,10 @@ import {
 
 const styles = {
     root: {
-        background: COLOR_ACCENT,
         borderRadius: 2,
         MozBorderRadius: 2,
         WebkitBorderRadius: 2,
         color: COLOR_TEXT,
-        cursor: 'pointer',
         display: 'flex',
         justifyContent: 'center',
         margin: '0 10px',
@@ -27,11 +25,11 @@ const styles = {
 };
 
 const getStyle = function(styles, disabled){
-    return disabled?{
+    return {
         ...styles,
-        backgroundColor: '#B6B6B6',
-        cursor: 'normal'
-    }:styles;
+        backgroundColor: disabled?'#B6B6B6':COLOR_ACCENT,
+        cursor: disabled?'normal':'pointer'
+    };
 };
 
 const Button = ({text, disabled, margin, onClick}) => (
