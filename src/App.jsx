@@ -92,7 +92,7 @@ class App extends React.Component {
     render() {
         return (
             <div style={this.styles.root}>
-                <span style={this.styles.title}>Create funny google search suggestions</span>
+                <span style={this.styles.title}>Create your own google search suggestions</span>
                 <div style={this.styles.inputAndPreview}>
                     <SearchInputs
                         search={this.state.search}
