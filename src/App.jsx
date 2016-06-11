@@ -17,7 +17,7 @@ class App extends React.Component {
         super(props);
         this.state = {
             search: 'how to ',
-            suggestions: ['be single', 'be awesome', 'be single and awesome', 'be singly awesome']
+            suggestions: ['be single', 'be awesome', 'be single and awesome', 'be simply awesome']
         };
     }
 
@@ -80,6 +80,15 @@ class App extends React.Component {
         });
     };
 
+    handleAddSuggestion = () => {
+        const suggestions = this.state.suggestions;
+        suggestions.push('');
+        this.setState({
+            ...this.state,
+            suggestions: suggestions
+        });
+    };
+
     render() {
         return (
             <div style={this.styles.root}>
@@ -90,7 +99,8 @@ class App extends React.Component {
                         suggestions={this.state.suggestions}
                         onSearchChange={this.handleSearchChange}
                         onSuggestionsChange={this.handleSuggestionsChange}
-                        onSuggestionDelete={this.handleSuggestionDelete}/>
+                        onSuggestionDelete={this.handleSuggestionDelete}
+                        onAdd={this.handleAddSuggestion}/>
                     <PreviewView
                         search={this.state.search}
                         suggestions={this.state.suggestions}/>
