@@ -19,6 +19,7 @@ const styles = {
         borderRight: border,
         borderTop: border,
         bottom: 2,
+        cursor: 'pointer',
         height: 38,
         marginRight: 24,
         position: 'relative'

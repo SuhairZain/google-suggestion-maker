@@ -12,9 +12,9 @@ import {
 const styles = {
     root: {
         background: COLOR_ACCENT,
-        borderRadius: '2px',
-        MozBorderRadius: '2',
-        WebkitBorderRadius: '2',
+        borderRadius: 2,
+        MozBorderRadius: 2,
+        WebkitBorderRadius: 2,
         color: COLOR_TEXT,
         cursor: 'pointer',
         display: 'flex',
