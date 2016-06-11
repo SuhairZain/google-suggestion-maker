@@ -86,7 +86,6 @@ class App extends React.Component {
 
     handleCreateImage = () => {
         const previewDiv = document.getElementById('preview');
-        console.log(previewDiv);
 
         html2canvas(previewDiv, {
             height: previewDiv.height,
