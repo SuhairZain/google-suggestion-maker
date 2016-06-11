@@ -12,16 +12,27 @@ class SearchInputs extends React.Component {
     styles = {
         root: {
             display: 'flex',
+            flexDirection: 'column',
             width: '50%'
         },
         fields: {
             display: 'flex',
             flexDirection: 'column',
+            flexGrow: 1,
             width: '100%'
         },
         buttons: {
             display: 'flex',
             margin: '0 24px'
+        },
+        footer: {
+            backgroundColor: '#d32f2f',
+            display: 'flex',
+            justifyContent: 'center',
+            width: '100%'
+        },
+        link: {
+            color: '#fff'
         }
     };
 
@@ -68,6 +79,9 @@ class SearchInputs extends React.Component {
                             onClick={this.props.onCreateImage}
                             disabled={this.props.search==='' || this.props.suggestions.length===0}/>
                     </div>
+                </div>
+                <div style={this.styles.footer}>
+                    <a style={this.styles.link} href="https://github.com/SuhairZain/google-suggestions-maker">View Source</a>
                 </div>
             </div>
         );
