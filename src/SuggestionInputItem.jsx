@@ -18,7 +18,6 @@ const styles = {
         borderBottom: border,
         borderRight: border,
         borderTop: border,
-        bottom: 2,
         cursor: 'pointer',
         height: 38,
         marginRight: 24,
@@ -46,6 +45,7 @@ class SuggestionInputItem extends React.Component {
                 <img
                     onClick={this.handleDelete}
                     style={styles.deleteButton}
+                    className="close-button"
                     src="images/delete.png"/>
             </div>
         );

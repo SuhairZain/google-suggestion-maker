@@ -13,3 +13,13 @@ html, body{
 body{
     font-family: Raleway, sans-serif;
 }
+
+.close-button{
+    bottom: 2px;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0){
+    .close-button{
+        bottom: 3px;
+    }
+}
