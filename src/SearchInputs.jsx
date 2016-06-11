@@ -86,7 +86,7 @@ class SearchInputs extends React.Component {
                     </div>
                 </div>
                 <div style={this.styles.footer}>
-                    <a style={this.styles.link} href="https://github.com/SuhairZain/google-suggestions-maker">View Source</a>
+                    <a style={this.styles.link} href="https://github.com/SuhairZain/google-suggestion-maker">View Source</a>
                 </div>
             </div>
         );
