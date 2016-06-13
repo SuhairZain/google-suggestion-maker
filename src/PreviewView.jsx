@@ -51,7 +51,7 @@ const PreviewView = ({search, includeSearch, suggestions}) => (
             </div>
         </div>
         <div style={{flexGrow: 1}}></div>
-        <span id="app-url" style={styles.credits}>http://goo.gl/v9eyUp</span>
+        <span id="app-url" style={styles.credits}>Make your own at http://goo.gl/v9eyUp</span>
     </div>
 );
 
