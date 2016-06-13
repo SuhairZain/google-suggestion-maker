@@ -8,6 +8,7 @@ import {
     COLOR_PRIMARY,
     COLOR_TEXT
 } from './utils/colors';
+import {getRandomSearchAndSuggestions} from './utils/random-search-and-sugg';
 
 import PreviewView from './PreviewView.jsx';
 import SearchInputs from './SearchInputs.jsx';
@@ -15,11 +16,7 @@ import SearchInputs from './SearchInputs.jsx';
 class App extends React.Component {
     constructor(props){
         super(props);
-        this.state = {
-            search: 'how to ',
-            includeSearch: true,
-            suggestions: ['be single', 'be awesome', 'be single and awesome', 'be simply awesome']
-        };
+        this.state = getRandomSearchAndSuggestions();
     }
 
     styles = {
